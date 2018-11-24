@@ -21,9 +21,8 @@ public class Measurements {
         String contents = "";
 
         return parseCountries(fakeData());
-        /*
 
-        try {
+        /*try {
             URL address = new URL("https://api.openaq.org/v1/measurements?country="+country_code);
             InputStreamReader reader = new InputStreamReader(address.openStream());
             BufferedReader buffer = new BufferedReader(reader);
@@ -33,13 +32,14 @@ public class Measurements {
                 contents += line;
             }
 
-            parseCountries(contents);
+            return parseCountries(contents);
 
         } catch (Exception e) {
             e.printStackTrace();
         }
+
+        return null;
         */
-        //return null;
     }
 
     public static ArrayList<Float> parseCountries(String contents){
@@ -59,7 +59,6 @@ public class Measurements {
             }
 
             Float value = location_item.getAsJsonPrimitive("value").getAsFloat();
-
             result.add(value);
         }
 

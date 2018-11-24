@@ -37,7 +37,6 @@ public class Controller {
         public void keyed(KeyEvent evt){
             String new_value = value_label.getText() + evt.getText();
             value_label.setText(new_value);
-
         }
 
         public void clicked(MouseEvent evt){
@@ -46,5 +45,4 @@ public class Controller {
             URL loc = list_view.getClass().getResource("popup.fxml");
             PopupController.openWindow(selected_item);
         }
-
 }
